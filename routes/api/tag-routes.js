@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
   })
   .then (data => {
     if (!data) { 
-      res.status(404).json({message: 'No product with this id.'});
+      res.status(404).json({message: 'No Tag with this id.'});
       return;
     }
     res.json(data);
@@ -73,7 +73,7 @@ router.delete('/:id', (req, res) => {
   })
   .then(data => {
     if (!data) {
-      res.status(404).json({message: 'No tag with this id.'})
+      res.status(404).json({message: 'No Tag with this id.'})
       return;
     }
     res.json(data);
