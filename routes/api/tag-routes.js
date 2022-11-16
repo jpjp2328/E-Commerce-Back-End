@@ -24,7 +24,7 @@ router.get('/:id', (req, res) => {
     include: [{model:Product}]
   })
   .then (data => {
-    if (!data){ 
+    if (!data) { 
       res.status(404).json({message: 'No product with this id.'});
       return;
     }
@@ -54,7 +54,7 @@ router.put('/:id', (req, res) => {
     where: {id: req.params.id}
   })
   .then(data => {
-    if (!data){
+    if (!data) {
       res.status(404).json({message: 'No Tag with this id.'});
       return;
     }
@@ -68,6 +68,20 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete on tag by its `id` value
+  Tag.destroy({
+    where: {id: req.params.id}
+  })
+  .then(data => {
+    if (!data) {
+      res.status(404).json({message: 'No tag with this id.'})
+      return;
+    }
+    res.json(data);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  })
 });
 
 module.exports = router;

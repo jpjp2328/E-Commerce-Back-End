@@ -26,7 +26,7 @@ router.get('/:id', (req, res) => {
     include: [{model:Category}, {model:Tag}]
   })
   .then (data => {
-    if (!data){ 
+    if (!data) { 
       res.status(404).json({message: 'No product with this id.'});
       return;
     }
