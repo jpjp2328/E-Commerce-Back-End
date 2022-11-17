@@ -30,7 +30,7 @@ npm i OR npm install
 
 ## Demo
 - Refer to this Demo Video below to guide you:
-
+https://user-images.githubusercontent.com/110818668/202436652-6a9632b8-9b69-4d02-91d7-16960f3c1061.mp4
 
 ## Technology
 - Javascript, MySQL, node.js
